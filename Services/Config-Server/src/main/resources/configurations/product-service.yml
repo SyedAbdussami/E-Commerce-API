@@ -1,0 +1,51 @@
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    driver-class-name: org.postgresql.Driver
+#    username: syed
+#    password: syed
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    database: postgresql
+#    hibernate:
+#      ddl-auto: validate
+#  flyway:
+#    baseline-version: 0
+#    baseline-on-migrate: true
+#    enabled: true
+#    user: ${spring.datasource.username}
+#    password: ${spring.datasource.password}
+#    baseline-description: "init"
+#server:
+#  port: 8060
+
+
+server:
+  port: 8050
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5455/product
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    hikari:
+      pool-name: HikariPool-1
+      connection-timeout: 50000
+      max-lifetime: 1800000
+      minimum-idle: 5
+      maximum-pool-size: 15
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+    baseline-description: "init"
+    baseline-version: 0
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+logging:
+  level:
+    org.springframework.jdbc.datasource: DEBUG

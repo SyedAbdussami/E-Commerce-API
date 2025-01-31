@@ -7,5 +7,5 @@ spring:
       authentication-database: admin
       database: customer
       username: syed
-  server:
-    port: 8090
+server:
+  port: 8090
